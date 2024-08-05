@@ -1,0 +1,147 @@
+-> npm init -> it will create package.json file
+-> npm i -D nodemon -> devloper dependency(will not go int production only for development)
+
+
+-> check installed node version: node -v
+-> path need to be set in system environment varibale for mongodb: mongodb  c:\program Files\MongoDB\Server\5.0
+-> check list of node version installed: nvm list
+-> to install selected version of node: nvm install versionName
+-> to use specific version of node: nvm use versionName
+-> to run program : npm start
+-> db connected then create models to add schema and export and import in index.js file.
+-> create routes folder and place router file and import and export
+-> create function to create user or product not createProduct/createUser
+-> findById -> inbuilt function to find product by ID 
+-> findByIdAndUpdate -> inbuilt function to findByIdAndUpdate and update the product
+-> findByIdAndDelete -> inbuilt function to findByIdAndDelete and delete the product
+-> create controllers folder and place router file and import and export
+-> need to create users module schema,routes and controllers
+-> create middleware to handle fake errors message or errors
+-> if using async then middleware not support need to install express sync i.e express-async-handler is a middleware
+    also import async handler in respective controllers
+-> put request use findByIdAndUpdate and then check user found or not else return updateduser 
+-> install cors to hanlde cors issue : npm instal cors then import it and use it. import in env and main file use function refer npm cors doc
+
+=> signup through mongodb mongodb.com thorugh gmail.
+username: mrwasim89 password: 0x7n4eNlicTcOE6Y
+=> How to secure your mern stack application freecodecamp.org
+goto database -> connection -> "mongodb+srv://mrwasim89:0x7n4eNlicTcOE6Y@zerodhaclonecluster.vlywtsp.mongodb.net/?retryWrites=true&w=majority&appName=zerodhaCloneCluster"
+
+MongoDb compass locally after download from community
+after install mongoDb shell
+Paste mongosh shell folder in c drive
+copy mongoDb bin path and mongosh shell path goto environment select path edit 
+then new paste respectively and save it
+-> mongod --version
+-> mongosh
+-> show dbs
+-> user cscorner
+nvm use 18 : node to use 18 version
+mongodb   value C:\Program Files\MongoDB\Server\5.0
+
+control panel: 
+MongoDB 5.0.26
+MongoDB Compass
+
+npm start then goto mongodb login with google click on cluster
+then click on collection to check available table in db
+- to create new order/positions first use dummy temp data with addmodel/addpositions 
+    end point and send/save in database
+- then create get allorders/allpositions to view
+
+
+// app.get('/addPositions', async(req,res)=>{
+//         let tempPositions = [
+//             {
+//                 product: "mobile",
+//                 name: "samsung",
+//                 qty: 5,
+//                 avg: 4,
+//                 price: 100,
+//                 net: "+0.12",
+//                 day: "-1.24",
+//                 isLoss: true
+//             },
+//             {
+//                 product: "laptop",
+//                 name: "Nokia",
+//                 qty: 5,
+//                 avg: 4,
+//                 price: 100,
+//                 net: "+0.12",
+//                 day: "-1.24",
+//                 isLoss: true
+//             }
+//         ];
+//         tempPositions.forEach((item) => {
+//                 let newPositions = new PositionsModel({
+//                     product: item.product,
+//                     name: item.name,
+//                     qty: item.qty,
+//                     avg: item.avg,
+//                     price: item.price,
+//                     net: item.net,
+//                     day: item.day,
+//                     isLoss: item.isLoss
+//                 });
+//                 newPositions.save();
+//     })       
+//     res.send("Done!");   
+// });
+    
+// app.get('/addHoldings', async(req,res)=>{
+//     let tempHoldings = [
+//         {
+//             name: "BHARTI",
+//             qty: 2,
+//             avg: 530.05,
+//             price: 541.15,
+//             net: "+0.58%",
+//             day: "-1.60%",
+//             isLoss: true
+//         },
+//         {
+//             name: "Jio",
+//             qty: 2,
+//             avg: 520.05,
+//             price: 521.15,
+//             net: "+0.58%",
+//             day: "-1.60%",
+//             isLoss: true
+//         }
+//     ];
+//     tempHoldings.forEach((item) => {
+//         let newHolding = new HoldingsModel({
+//             name: item.name,
+//             qty: item.qty,
+//             avg: item.avg,
+//             price: item.price,
+//             net: item.net,
+//             day: item.day
+//         });
+//         newHolding.save();
+//     });
+//     res.send("Done!");
+// });
+// app.get('/addOrders', async(req,res) =>{
+//     let tempOrders = [
+//         {
+//             name: "Samsung",
+//             qty: 5,
+//             price: 340.40,
+//             mode: "Dual",
+//         }
+//     ];
+//     tempOrders.forEach((item) => {
+//         let newOrder = new OrdersModel({
+//             name: item.name,
+//             qty: item.qty,
+//             price: item.price,
+//             mode: item.mode
+//         });
+//             newOrder.save();
+//         });
+//         res.send("Done!");
+// });
+
+Aug-5 working in mongodb 
